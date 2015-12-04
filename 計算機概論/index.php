@@ -80,7 +80,7 @@ $user_count = mysql_fetch_array($query);
     }
 
     //確認學號字元
-    $學號 = preg_replace("[^A-Za-z0-9]", "", $_POST['學號']);
+    $學號 = preg_replace('~[^a-zA-Z0-9]+~', "", $_POST['學號']);
     if ($學號 != $_POST['學號']) {
         header("Location: index.php?page=register&err=nanu");
         die();
